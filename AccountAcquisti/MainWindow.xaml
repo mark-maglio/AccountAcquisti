@@ -1,0 +1,99 @@
+﻿<Window x:Class="LoginAcquisti.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LoginAcquisti"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+            <ColumnDefinition Width="6*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Border Background="White" ></Border>
+
+        <Border Grid.Column="1" Background="RoyalBlue"></Border>
+        <Border Grid.Row="1" Grid.ColumnSpan="2" Background="MidnightBlue"></Border>
+
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center">
+            <Image Source="logoWin_m.png" Width="250" Height="250"></Image>
+        </StackPanel>
+
+
+        <StackPanel Grid.Column="1" HorizontalAlignment="Center"  VerticalAlignment="Center">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60"></RowDefinition>
+                    <RowDefinition Height="60"></RowDefinition>
+                    <RowDefinition Height="60"></RowDefinition>
+                    <RowDefinition Height="70"></RowDefinition>
+
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Content="Inserisci credenziali" HorizontalAlignment="Center" Grid.Row="0" Grid.ColumnSpan="2" FontWeight="Bold" Foreground="White" FontFamily="Microsoft JhengHei"></Label>
+
+                <Label Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" Content="Utente: " Foreground="White" FontFamily="Microsoft JhengHei"></Label>
+                <TextBox x:Name="txtnome" Grid.Column="2" Grid.Row="1" Height="30" Width="90"></TextBox>
+
+                <Label Content="Password: " Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" Foreground="White" FontFamily="Microsoft JhengHei"></Label>
+                <TextBox x:Name="txtpass" Grid.Column="2" Grid.Row="2" Height="30" Width="90"></TextBox>
+
+                <Button x:Name="btnAccedi" HorizontalAlignment="Center" Grid.Row="3" Grid.ColumnSpan="2" Height="40" Width="120" Content="Accedi" FontFamily="Microsoft JhengHei" Click="BtnAccedi_Click"></Button>
+            </Grid>
+
+        </StackPanel>
+
+        <StackPanel Grid.Row="1">
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition Height="35"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="150"></ColumnDefinition>
+                    <ColumnDefinition Width="5"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Label Content="Definisci acquisto" Grid.ColumnSpan="2" Height="35" HorizontalAlignment="Center" FontFamily="Microsoft JhengHei" FontWeight="Bold" Background="#00000000" Foreground="White"></Label>
+                <Label Content="Prodotto: " Grid.Row="1" Grid.Column="0" Height="35" HorizontalAlignment="Center" FontFamily="Microsoft JhengHei" Background="#00000000" Foreground="White"></Label>
+                <Label Content="Quantità: " Grid.Row="2" Grid.Column="0" Height="35" HorizontalAlignment="Center" FontFamily="Microsoft JhengHei" Background="#00000000" Foreground="White"></Label>
+                <Label Content="Prezzo: " Grid.Row="3" Grid.Column="0" Height="35" HorizontalAlignment="Center" FontFamily="Microsoft JhengHei" Background="#00000000" Foreground="White"></Label>
+
+                <ComboBox x:Name="cmbProd" Grid.Column="1" Grid.Row="1" Width="100" Height="20" FontFamily="Microsoft JhengHei" Loaded="CmbProd_Loaded" SelectionChanged="CmbProd_SelectionChanged"></ComboBox>
+                <TextBox x:Name="txtQuant" Grid.Column="1" Grid.Row="2" Width="100" Height="20" FontFamily="Microsoft JhengHei"></TextBox>
+                <TextBox x:Name="txtPrezzo" Grid.Column="1" Grid.Row="3" Width="100" Height="20" FontFamily="Microsoft JhengHei"></TextBox>
+
+                <Button x:Name="btnPulisci" Grid.Column="0" Grid.Row="4" Content="Pulisci" Width="90" Height="25" Click="BtnPulisci_Click"></Button>
+                <Button x:Name="btnStampa" Grid.Column="1" Grid.Row="4" Content="Stampa" Width="90" Height="25" Click="BtnStampa_Click"></Button>
+            </Grid>
+
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100"></RowDefinition>
+                    <RowDefinition Height="100"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <ListBox x:Name="lblAcquisti" Grid.Row="0" Grid.Column="1" Height="90" Width="400" VerticalAlignment="Center" Margin="0,40,0,0"></ListBox>
+                <Button x:Name="btnRimuovi" Grid.Row="1" Grid.Column="1" Content="Rimuovi Selezione"  Height="30" Width="150" Click="BtnRimuovi_Click"></Button>
+
+            </Grid>
+        </StackPanel>
+
+    </Grid>
+</Window>
